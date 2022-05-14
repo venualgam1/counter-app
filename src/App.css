@@ -28,6 +28,26 @@
   color: #61dafb;
 }
 
+.carousel {
+  width: 900px;
+  height: 67vh;
+  margin: auto;
+}
+
+.carousel--image {
+  height: 500px;
+}
+
+.nav--link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.nav--link:hover {
+  color: #ffffff;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
