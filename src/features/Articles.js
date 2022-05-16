@@ -8,8 +8,11 @@ export const articleSlice = createSlice({
     addArticle: (state, action) => {
       state.value.push(action.payload);
     },
+    deleteArticle: (state, action) => {
+      state.value = state.value.filter((user) => user.id !== action.payload.id);
+    },
   },
 });
 
-export const { addArticle } = articleSlice.actions;
+export const { addArticle, deleteArticle } = articleSlice.actions;
 export default articleSlice.reducer;

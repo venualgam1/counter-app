@@ -13,6 +13,8 @@ import ErrorPage from "./components/ErrorPage";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import articleReducer from "./features/Articles";
+import NewArticle from "./components/NewArticle";
+import DetailedArticle from "./components/DetailedArticle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = configureStore({
@@ -27,9 +29,12 @@ root.render(
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/trending" element={<Trending />}></Route>
+          <Route path="/trending" element={<Trending />}>
+            <Route path=":Id" element={<DetailedArticle />} />
+          </Route>
           <Route path="/health" element={<Health />}></Route>
           <Route path="/tech" element={<Tech />}></Route>
+          <Route path="/newArticle" element={<NewArticle />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </Router>

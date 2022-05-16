@@ -24,6 +24,9 @@ export default function NavBar() {
             <Link className="nav--link" to="tech">
               Tech
             </Link>
+            <Link className="nav--link" to="newArticle">
+              Add New Article
+            </Link>
           </Nav>
         </Container>
       </Navbar>

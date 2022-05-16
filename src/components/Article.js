@@ -1,23 +1,29 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import { deleteArticle } from "../features/Articles";
+import { useDispatch } from "react-redux";
 
 function Article({ article }) {
-  const variant = "Light";
+  const dispatch = useDispatch();
+
   return (
-    <div>
-      <Card
-        bg={variant.toLowerCase()}
-        key={variant}
-        text={variant.toLowerCase() === "light" ? "dark" : "white"}
-        style={{ width: "18rem" }}
-        className="mb-2"
-      >
-        <Card.Header>{article.catageory}</Card.Header>
+    <div className="flex--center">
+      <Card className="article--card m-2">
         <Card.Body>
-          <Card.Title>
-            {variant} {article.title}
-          </Card.Title>
+          <Card.Title>{article.title}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            {article.catageory}
+          </Card.Subtitle>
           <Card.Text>{article.description}</Card.Text>
+          <Button
+            onClick={() => {
+              dispatch(deleteArticle({ id: article.id }));
+            }}
+            variant="primary"
+          >
+            Delete
+          </Button>
+          <Button className="more--details">More Details...</Button>
         </Card.Body>
       </Card>
     </div>

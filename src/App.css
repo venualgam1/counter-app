@@ -38,6 +38,61 @@
   height: 500px;
 }
 
+.article--card {
+  width: 28rem;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.paginationBtns {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 40px;
+}
+
+.paginationBtns a {
+  padding: 5px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.paginationBtns a:hover {
+  color: #ffffff;
+  background-color: #2b2eff;
+}
+
+.paginationActive a {
+  color: #ffffff;
+  background-color: #2b2eff;
+}
+
+.flex--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search--box {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.more--details {
+  margin-left: 20px;
+}
+
 .nav--link {
   color: #ffffff;
   text-decoration: none;
