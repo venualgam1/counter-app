@@ -1,11 +1,9 @@
-// import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Article from "./Article";
 
 export default function Trending({ catageory }) {
-  //   let navigate = useNavigate();
   const [pageNumber, setPageNUmber] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -21,6 +19,8 @@ export default function Trending({ catageory }) {
         val.description.toLowerCase().includes(searchTerm.toLowerCase())
       ) {
         return val;
+      } else {
+        return false;
       }
     })
     .map((article) => {
@@ -64,7 +64,6 @@ export default function Trending({ catageory }) {
           activeClassName={"paginationActive"}
         />
       )}
-      {/* <button onClick={() => navigate("/home")}>Back</button> */}
     </div>
   );
 }

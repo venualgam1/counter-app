@@ -2,6 +2,7 @@ import { Carousel } from "react-bootstrap";
 import image1 from "../images/image-one.jpg";
 import image2 from "../images/image-two.jpg";
 import image3 from "../images/image-three.jpg";
+import React from "react";
 
 export default function Hero() {
   return (

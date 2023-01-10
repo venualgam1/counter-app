@@ -1,10 +1,11 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import React from "react";
 
 export default function NavBar() {
   return (
     <>
-      <Navbar bg="primary" variant="dark">
+      <Navbar className="nav--bar" bg="primary" variant="dark">
         <Container>
           <Navbar.Brand>
             <Link className="nav--link" to="/">

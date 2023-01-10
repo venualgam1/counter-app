@@ -29,9 +29,20 @@ root.render(
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/trending" element={<Trending />}>
-            <Route path=":Id" element={<DetailedArticle />} />
-          </Route>
+          <Route path="/trending" element={<Trending />}></Route>
+          <Route
+            path="/trending/detailedArticle/:Id"
+            element={<DetailedArticle />}
+          />
+          <Route
+            path="/health/detailedArticle/:Id"
+            element={<DetailedArticle />}
+          />
+          <Route
+            path="/tech/detailedArticle/:Id"
+            element={<DetailedArticle />}
+          />
+
           <Route path="/health" element={<Health />}></Route>
           <Route path="/tech" element={<Tech />}></Route>
           <Route path="/newArticle" element={<NewArticle />}></Route>

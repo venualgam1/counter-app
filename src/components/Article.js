@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { deleteArticle } from "../features/Articles";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Article({ article }) {
   const dispatch = useDispatch();
@@ -15,15 +16,23 @@ function Article({ article }) {
             {article.catageory}
           </Card.Subtitle>
           <Card.Text>{article.description}</Card.Text>
-          <Button
-            onClick={() => {
-              dispatch(deleteArticle({ id: article.id }));
-            }}
-            variant="primary"
-          >
-            Delete
-          </Button>
-          <Button className="more--details">More Details...</Button>
+          <div className="flex">
+            <Button
+              onClick={() => {
+                dispatch(deleteArticle({ id: article.id }));
+              }}
+              variant="primary"
+            >
+              Delete
+            </Button>
+
+            <Link
+              to={`detailedArticle/${article.id}`}
+              className="more--details"
+            >
+              More Details...
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     </div>

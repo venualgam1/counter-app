@@ -5,9 +5,9 @@ import { addArticle } from "../features/Articles";
 import { useSelector } from "react-redux";
 
 function NewArticle() {
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
-  const [catageory, setCatageory] = useState();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [catageory, setCatageory] = useState("");
 
   const dispatch = useDispatch();
   const articleList = useSelector((state) => state.articles.value);
@@ -51,6 +51,7 @@ function NewArticle() {
         <Button
           variant="primary"
           type="submit"
+          style={{ marginTop: 20 }}
           onClick={(event) => {
             event.preventDefault();
             dispatch(
